@@ -30,33 +30,30 @@ const ProjectDetail = () => {
     }
 
     return (
-        <main>
-            <Hero
-                project={project}
-                details={project.detail}
-            />
+    <main className="pb-24">
+        <Hero
+            project={project}
+            details={project.detail}
+        />
 
-            <Overview overview={project.overview} />
+        <Overview overview={project.overview} />
 
-            <Problem problem={project.detail.problem} />
+        <Problem problem={project.detail.problem} />
 
-            <Approach approach={project.detail.solution} />
+        <Approach approach={project.detail.solution} />
 
-            <Architecture
-                architecture={project.detail.architecture}
-                // challenges={project.detail.challenges}
-            />
+        <Architecture architecture={project.detail.architecture} />
 
-            <Results results={project.detail.results} />
+        <Results results={project.detail.results} />
 
-            <LessonsLearned lessonsLearned={project.detail.lessonsLearned} />
+        <LessonsLearned lessonsLearned={project.detail.lessonsLearned} />
 
-            <FutureWork futureWork={project.detail.futureWork} />
+        <FutureWork futureWork={project.detail.futureWork} />
 
-            <Resources resources={project.detail.resources} />
+        <Resources resources={project.detail.resources} />
 
-            <MoreProjects currentProject={project} />
-        </main>
+        <MoreProjects currentProject={project} />
+    </main>
     );
 };
 

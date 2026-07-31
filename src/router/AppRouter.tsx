@@ -4,7 +4,6 @@ import MainLayout from "../layouts/MainLayout";
 
 import Home from "../pages/Home/index.tsx";
 import Projects from "../pages/Projects";
-import Research from "../pages/Research";
 import Blog from "../pages/Blog/index.tsx";
 import Resume from "../pages/Resume";
 import Contact from "../pages/Contact/index.tsx";
@@ -20,7 +19,6 @@ export default function AppRouter() {
                 <Route element={<MainLayout />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/projects" element={<Projects />} />
-                    <Route path="/research" element={<Research />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/resume" element={<Resume />} />
                     <Route path="/contact" element={<Contact />} />
