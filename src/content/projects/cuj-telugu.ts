@@ -128,11 +128,6 @@ export const teluguCommunityPlatform: Project = {
             "Automated testing for critical workflows.",
             "Audit logging for administrative actions.",
             "Improved modularization of backend components."
-        ],
-
-        resources: {
-            article: "/writings/building-a-community-platform",
-            documentation: "/engineering-journal/projects/telugu-community-platform"
-        }
+        ]
     }
 };
