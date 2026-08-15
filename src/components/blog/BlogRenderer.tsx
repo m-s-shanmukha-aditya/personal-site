@@ -1,4 +1,4 @@
-import type { Blog } from "../../blog/types";
+import type { Blog } from "../../content/blogs/types";
 
 interface Props {
   blog: Blog;
@@ -88,7 +88,7 @@ export default function BlogRenderer({ blog }: Props) {
                 return (
                   <pre
                     key={index}
-                    className="overflow-x-auto rounded-xl bg-neutral-900 p-6"
+                    className="overflow-x-auto rounded-xl border border-border bg-neutral-100 px-5 py-4 font-mono text-sm leading-6 text-neutral-800"
                   >
                     <code>{block.code}</code>
                   </pre>

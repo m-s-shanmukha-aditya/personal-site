@@ -1,38 +1,78 @@
-export default function Blog() {
-  return (
-    <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
-      <section className="py-24 sm:py-32">
-        <div className="max-w-3xl">
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-            Blog
-          </h1>
+import Container from "../../components/layout/Container";
+import { blogs } from "../../content/blogs";
+import { Link } from "react-router-dom";
 
-          <p className="mt-8 text-lg leading-9 text-neutral-600">
-            A place where I document engineering decisions, software design,
-            machine learning experiments, and lessons learned while building
-            real-world systems.
-          </p>
-        </div>
-      </section>
+const Blog = () => {
+    return (
+        <section className="py-15">
+            <Container>
+                <div className="space-y-12">
+                    <div className="space-y-2">
+                        <h1 className="text-4xl font-bold tracking-tight">
+                            Blog
+                        </h1>
 
-      <section className="pb-24">
-        <div className="max-w-3xl rounded-2xl border border-neutral-200 p-10">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Coming Soon
-          </h2>
+                        <p className="max-w-2xl text-muted-foreground">
+                            A place where I document engineering decisions,
+                            software design, machine learning experiments, and
+                            lessons learned while building real-world systems.
+                        </p>
+                    </div>
 
-          <p className="mt-6 text-lg leading-8 text-neutral-600">
-            I'm currently working on the first set of articles. Rather than
-            publishing generic tutorials, I want to write about the engineering
-            decisions, trade-offs, and lessons I've encountered while building
-            software systems.
-          </p>
+                    <div className="space-y-8">
+                        {blogs.map((blog) => (
+                            <article
+                                key={blog.slug}
+                                className="border-b pb-8 last:border-none"
+                            >
+                                <div className="space-y-3">
+                                    <div className="space-y-2">
+                                        <h2 className="text-2xl font-semibold tracking-tight">
+                                            {blog.title}
+                                        </h2>
 
-          <p className="mt-6 text-lg leading-8 text-neutral-600">
-            The first articles will be published soon.
-          </p>
-        </div>
-      </section>
-    </div>
-  );
-}
+                                        <div className="flex flex-wrap items-center gap-2 text-sm">
+                                            <span className="text-muted-foreground">
+                                                {blog.publishedAt}
+                                            </span>
+
+                                            <span className="text-muted-foreground">
+                                                ·
+                                            </span>
+
+                                            <span className="text-muted-foreground">
+                                                {blog.readingTime}
+                                            </span>
+
+                                            {blog.tags.map((tag) => (
+                                                <span
+                                                    key={tag}
+                                                    className="rounded-full border border-border px-2 py-0.5 text-xs text-muted-foreground"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <p className="max-w-3xl leading-7 text-muted-foreground">
+                                        {blog.excerpt}
+                                    </p>
+
+                                    <Link
+                                        to={`/blog/${blog.slug}`}
+                                        className="inline-flex font-medium transition-colors hover:text-foreground"
+                                    >
+                                        Read Article →
+                                    </Link>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </Container>
+        </section>
+    );
+};
+
+export default Blog;

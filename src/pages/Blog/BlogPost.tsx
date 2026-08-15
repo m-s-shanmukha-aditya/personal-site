@@ -1,6 +1,6 @@
 import { Navigate, useParams } from "react-router-dom";
 
-import { getBlog } from "../../blog";
+import { getBlog } from "../../content/blogs";
 import BlogRenderer from "../../components/blog/BlogRenderer";
 
 export default function BlogPost() {

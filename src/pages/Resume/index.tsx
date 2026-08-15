@@ -74,7 +74,7 @@ const Resume = () => {
 
           <div className="mt-8 border-l border-border pl-6">
             <h3 className="text-lg font-semibold">
-              Integrated B.Tech + M.Tech
+              B.Tech (Hons.)
             </h3>
 
             <p className="mt-1 text-muted-foreground">
@@ -86,7 +86,7 @@ const Resume = () => {
             </p>
 
             <p className="mt-1 text-sm text-muted-foreground">
-              2023 – 2028
+              2023 – 2027
             </p>
 
             <p className="mt-2 text-sm text-muted-foreground">

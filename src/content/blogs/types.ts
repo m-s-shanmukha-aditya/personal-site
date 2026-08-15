@@ -4,6 +4,7 @@ export type BlogBlock =
   | QuoteBlock
   | CodeBlock
   | ImageBlock
+  | LinkBlock
   | ListBlock
   | DividerBlock;
 
@@ -36,6 +37,12 @@ export interface ImageBlock {
   caption?: string;
 }
 
+export interface LinkBlock {
+  type: "link";
+  text: string;
+  url: string;
+}
+
 export interface ListBlock {
   type: "list";
   ordered?: boolean;
@@ -47,22 +54,17 @@ export interface DividerBlock {
 }
 
 export interface Blog {
-
   slug: string;
-
   title: string;
-
   description: string;
-
   excerpt: string;
-
   publishedAt: string;
-
   readingTime: string;
-
   featured: boolean;
-
   tags: string[];
-
+  image?: {
+    src: string;
+    alt: string;
+  };
   content: BlogBlock[];
 }
