@@ -34,7 +34,7 @@ export const teluguCommunityPlatform: Project = {
 
     status: "Completed",
 
-    featured: false,
+    featured: true,
 
     github: "https://github.com/m-s-shanmukha-aditya/cuj-telugu-community/",
 

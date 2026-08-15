@@ -33,7 +33,7 @@ export const spacecraftTelemetry: Project = {
 
     status: "Completed",
 
-    featured: false,
+    featured: true,
 
     detail: {
         hero: {
