@@ -24,11 +24,11 @@ const AreasOfExploration = () => {
             <section className="py-16 sm:py-20">
 
                 <div className="max-w-3xl">
-                    <h2 className="text-3xl font-semibold tracking-tight">
+                    <h2 className="font-display text-4xl tracking-tight sm:text-5xl">
                         Areas of Exploration
                     </h2>
 
-                    <p className="mt-5 text-lg leading-8 text-neutral-600">
+                    <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
                         While every project is different, I find myself returning
                         to a few recurring engineering challenges. These are the
                         areas I'm most interested in exploring as I continue to
@@ -36,18 +36,18 @@ const AreasOfExploration = () => {
                     </p>
                 </div>
 
-                <div className="mt-10 space-y-8">
+                <div className="mt-12 grid border-t border-border md:grid-cols-3">
 
                     {areas.map((area) => (
                         <article
                             key={area.title}
-                            className="max-w-3xl"
+                            className="border-b border-border py-7 md:border-b-0 md:border-r md:px-7 md:first:pl-0 md:last:border-r-0"
                         >
                             <h3 className="text-xl font-semibold tracking-tight">
                                 {area.title}
                             </h3>
 
-                            <p className="mt-2 leading-8 text-neutral-600">
+                            <p className="mt-2 leading-8 text-muted-foreground">
                                 {area.description}
                             </p>
 

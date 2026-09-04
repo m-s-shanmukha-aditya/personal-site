@@ -12,9 +12,9 @@ const Architecture = ({ architecture }: ArchitectureProps) => {
     if (!architecture) return null;
 
     return (
-        <section className="py-10">
-            <div className="mx-auto max-w-3xl px-6">
-                <h2 className="text-3xl font-bold tracking-tight">
+        <section className="py-14">
+            <div className="mx-auto max-w-5xl px-6">
+                <h2 className="font-display text-3xl tracking-tight">
                     Architecture
                 </h2>
 
@@ -27,7 +27,7 @@ const Architecture = ({ architecture }: ArchitectureProps) => {
                         />
                     )}
 
-                    <div className="space-y-5">
+                    <div className="max-w-4xl space-y-5">
                         {architecture.description.map((paragraph, index) => (
                             <p
                                 key={index}

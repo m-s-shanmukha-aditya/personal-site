@@ -1,5 +1,7 @@
 import Container from "../../../components/layout/Container";
 import { featuredProjects } from "../../../content/projects";
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const [primaryProject, ...otherProjects] = featuredProjects;
 
@@ -8,76 +10,70 @@ const FeaturedProjects = () => {
         <Container>
             <section className="py-16 sm:py-20">
 
-                <div className="max-w-3xl">
-                    <h2 className="text-3xl font-semibold tracking-tight">
+                <div className="flex flex-col justify-between gap-5 border-b border-border pb-8 sm:flex-row sm:items-end">
+                    <div className="max-w-3xl">
+                    <h2 className="font-display text-4xl tracking-tight sm:text-5xl">
                         Selected Work
                     </h2>
 
-                    <p className="mt-5 text-lg leading-8 text-neutral-600">
+                    <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
                         These projects represent different stages of my journey in
                         building intelligent software systems, spanning
                         conversational AI, backend engineering, and applied
                         machine learning.
                     </p>
+                    </div>
+                    <Link to="/projects" className="accent-link shrink-0 text-sm font-semibold">View all projects</Link>
                 </div>
 
-                {/* Primary Project */}
-                <div className="mt-8 h-px bg-neutral-200" />
-                <article className="mt-10 pt-2">
-
-                    <div className="max-w-3xl">
-
-                        <h3 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                            {primaryProject.title}
-                        </h3>
-
-                        <p className="mt-4 text-lg leading-8 text-neutral-600">
-                            {primaryProject.summary}
-                        </p>
-
-                        <a
-                            href={`/projects/${primaryProject.slug}`}
-                            className="mt-5 inline-flex items-center font-medium transition-colors hover:text-neutral-700"
-                        >
-                            Read Case Study
-                            <span className="ml-2 transition-transform duration-200 hover:translate-x-1">
-                                →
-                            </span>
-                        </a>
-
+                <article className={`mt-10 border-b border-border pb-12 ${primaryProject.thumbnail ? "grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14" : ""}`}>
+                    {primaryProject.thumbnail && (
+                        <div className="relative min-h-64 overflow-hidden border border-border bg-muted p-7 sm:min-h-80">
+                            <img src={primaryProject.thumbnail} alt={primaryProject.title} className="absolute inset-0 h-full w-full object-cover" />
+                            <span className="relative bg-[#e8edef] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-foreground">Featured project</span>
+                        </div>
+                    )}
+                    <div className="flex flex-col justify-center">
+                        <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                            <span>{primaryProject.category}</span>
+                            <span className="h-1 w-1 rounded-full bg-accent" />
+                            <span>{primaryProject.year}</span>
+                            <span className="text-accent">{primaryProject.status}</span>
+                        </div>
+                        <h3 className="font-display mt-5 text-4xl tracking-tight sm:text-5xl">{primaryProject.title}</h3>
+                        <p className="mt-4 text-base leading-8 text-muted-foreground">{primaryProject.summary}</p>
+                        <div className="mt-5 flex flex-wrap gap-2">
+                            {primaryProject.technologies.slice(0, 4).map((technology) => (
+                                <span key={technology} className="border border-border px-2.5 py-1 text-xs text-muted-foreground">{technology}</span>
+                            ))}
+                        </div>
+                        <Link to={`/projects/${primaryProject.slug}`} className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-accent">
+                            Read case study <ArrowUpRight size={16} />
+                        </Link>
                     </div>
-
                 </article>
 
-                {/* Remaining Projects */}
-
-                <div className="mt-6">
+                <div className="mt-8 grid gap-x-8 md:grid-cols-2">
 
                     {otherProjects.map((project) => (
                         <article
                             key={project.id}
-                            className="group pt-8"
+                            className="group border-b border-border py-8 first:pt-0 md:nth-[2]:pt-0"
                         >
-                            <div className="max-w-3xl">
-
-                                <h3 className="text-2xl font-semibold tracking-tight transition-colors group-hover:text-neutral-700">
+                            <div>
+                                <div className="flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                                    <span>{project.category}</span>
+                                    <span>{project.year}</span>
+                                </div>
+                                <h3 className="font-display mt-4 text-3xl tracking-tight transition-colors group-hover:text-foreground">
                                     {project.title}
                                 </h3>
-
-                                <p className="mt-3 text-lg leading-8 text-neutral-600">
+                                <p className="mt-3 text-base leading-7 text-muted-foreground">
                                     {project.summary}
                                 </p>
-
-                                <a
-                                    href={`/projects/${project.slug}`}
-                                    className="mt-4 inline-flex items-center font-medium transition-colors hover:text-neutral-700"
-                                >
-                                    Read Case Study
-                                    <span className="ml-2 transition-transform duration-200 group-hover:translate-x-1">
-                                        →
-                                    </span>
-                                </a>
-
+                                <Link to={`/projects/${project.slug}`} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-accent">
+                                    Read case study <ArrowUpRight size={15} />
+                                </Link>
                             </div>
                         </article>
                     ))}

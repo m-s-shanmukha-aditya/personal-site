@@ -15,27 +15,30 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="border-b border-neutral-200">
+        <header className="sticky top-0 z-50 border-b border-border/80 bg-[#e8edef]/85 backdrop-blur-xl">
             <Container>
-                <nav className="flex h-24 items-center justify-between">
+            <nav className="flex h-20 items-center justify-between">
                     {/* Logo */}
-                    <NavLink
-                        to="/"
-                        className="text-xl font-semibold tracking-tight"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Munukutla
-                    </NavLink>
+                    <div className="flex items-center gap-4">
+                        <NavLink
+                            to="/"
+                            className="font-display text-xl tracking-tight"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Munukutla
+                        </NavLink>
+                        <span className="hidden border-l border-border pl-4 text-xs text-muted-foreground sm:inline">Software &amp; ML</span>
+                    </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden items-center gap-10 text-sm font-medium md:flex">
+                    <div className="hidden items-center gap-8 text-sm font-medium md:flex">
                         {links.map((link) => (
                             <NavLink
                                 key={link.path}
                                 to={link.path}
                                 className={({ isActive }) =>
-                                    `transition-colors hover:text-neutral-500 ${
-                                        isActive ? "text-black" : "text-neutral-600"
+                                    `relative py-2 transition-colors hover:text-foreground ${
+                                        isActive ? "text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-accent" : "text-muted-foreground"
                                     }`
                                 }
                             >
@@ -47,7 +50,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="rounded p-2 transition hover:bg-neutral-100 md:hidden"
+                        className="rounded-full border border-border p-2 transition hover:border-foreground hover:bg-muted md:hidden"
                         aria-label="Toggle navigation"
                     >
                         {isOpen ? <X size={22} /> : <Menu size={22} />}
@@ -56,7 +59,7 @@ export default function Navbar() {
 
                 {/* Mobile Navigation */}
                 {isOpen && (
-                    <div className="border-t border-neutral-200 py-4 md:hidden">
+                    <div className="border-t border-border py-4 md:hidden">
                         <div className="flex flex-col gap-4">
                             {links.map((link) => (
                                 <NavLink
@@ -64,8 +67,8 @@ export default function Navbar() {
                                     to={link.path}
                                     onClick={() => setIsOpen(false)}
                                     className={({ isActive }) =>
-                                        `text-sm font-medium transition-colors hover:text-neutral-500 ${
-                                            isActive ? "text-black" : "text-neutral-600"
+                                        `text-sm font-medium transition-colors hover:text-foreground ${
+                                            isActive ? "text-foreground" : "text-muted-foreground"
                                         }`
                                     }
                                 >

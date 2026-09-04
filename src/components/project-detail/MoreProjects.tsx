@@ -25,18 +25,18 @@ const MoreProjects = ({ currentProject }: MoreProjectsProps) => {
     if (!projectsToShow.length) return null;
 
     return (
-        <section className="py-10">
-            <div className="mx-auto max-w-3xl px-6">
-                <h2 className="text-3xl font-bold tracking-tight">
+        <section className="py-14">
+            <div className="mx-auto max-w-5xl px-6">
+                <h2 className="font-display text-3xl tracking-tight">
                     More Projects
                 </h2>
 
-                <div className="mt-8 divide-y border-y">
+                <div className="mt-8 grid divide-y border-y md:grid-cols-3 md:divide-x md:divide-y-0">
                     {projectsToShow.map((project) => (
                         <Link
                             key={project.slug}
                             to={`/projects/${project.slug}`}
-                            className="block py-8 transition-colors hover:bg-muted/30"
+                            className="block px-5 py-8 transition-colors hover:bg-muted/50 first:pl-0 last:pr-0"
                         >
                             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                                 {project.category}

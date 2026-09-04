@@ -1,9 +1,69 @@
 @import "tailwindcss";
 
+@theme {
+  --color-foreground: #26343a;
+  --color-muted-foreground: #647278;
+  --color-border: #cbd5d9;
+  --color-muted: #e0e7e9;
+  --color-accent: #c76545;
+  --font-sans: "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+}
+
+:root {
+  color: #25251f;
+  background: #edf0ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 84% -8%, rgba(255, 255, 255, 0.78), transparent 34rem),
+    radial-gradient(circle at 4% 28%, rgba(191, 211, 214, 0.12), transparent 30rem),
+    linear-gradient(135deg, #e9eeed 0%, #f1f3f1 48%, #e7ecee 100%);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: #f0c1ad;
+  color: #26343a;
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility page-rule {
+  border-color: var(--color-border);
+}
+
+@utility accent-link {
+  color: var(--color-foreground);
+  transition: color 160ms ease, background-color 160ms ease;
+  text-decoration: underline;
+  text-decoration-color: #e4aa95;
+  text-underline-offset: 0.2em;
+}
+
+@utility eyebrow {
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.projects-page {
+  background: linear-gradient(180deg, rgba(205, 225, 229, 0.22), transparent 28rem);
+}
+
+.blog-page {
+  background: linear-gradient(180deg, rgba(238, 214, 195, 0.26), transparent 28rem);
 }

@@ -1,10 +1,11 @@
 const Resume = () => {
   return (
-    <main className="py-15">
+    <main className="py-20 sm:py-24">
       <div className="mx-auto max-w-5xl px-6">
         {/* Hero */}
         <section className="max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          <p className="eyebrow">Experience &amp; practice</p>
+          <h1 className="font-display mt-4 text-5xl tracking-tight sm:text-6xl">
             Resume
           </h1>
 
@@ -18,7 +19,7 @@ const Resume = () => {
 
         {/* Experience */}
         <section className="mt-20">
-          <h2 className="text-2xl font-semibold">Experience</h2>
+          <h2 className="font-display text-3xl">Experience</h2>
 
           <div className="mt-8 space-y-12">
             <div className="border-l border-border pl-6">
@@ -70,7 +71,7 @@ const Resume = () => {
 
         {/* Education */}
         <section className="mt-20">
-          <h2 className="text-2xl font-semibold">Education</h2>
+          <h2 className="font-display text-3xl">Education</h2>
 
           <div className="mt-8 border-l border-border pl-6">
             <h3 className="text-lg font-semibold">
@@ -97,7 +98,7 @@ const Resume = () => {
 
         {/* Technical Expertise */}
         <section className="mt-20">
-          <h2 className="text-2xl font-semibold">
+          <h2 className="font-display text-3xl">
             Technical Expertise
           </h2>
 
@@ -135,7 +136,7 @@ const Resume = () => {
 
         {/* Resume Download */}
         <section className="mt-20">
-          <h2 className="text-2xl font-semibold">
+          <h2 className="font-display text-3xl">
             Resume
           </h2>
 
@@ -147,7 +148,7 @@ const Resume = () => {
           <a
             href="/Munukutla_Sri_Shanmukha_Aditya_Resume.pdf"
             download
-            className="mt-6 inline-flex items-center rounded-md border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-accent"
+            className="mt-6 inline-flex items-center border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:bg-accent hover:text-white"
           >
             Download Resume
           </a>

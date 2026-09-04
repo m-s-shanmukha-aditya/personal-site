@@ -16,9 +16,9 @@ const Resources = ({ resources }: ResourcesProps) => {
     if (!links.length) return null;
 
     return (
-        <section className="py-10">
-            <div className="mx-auto max-w-3xl px-6">
-                <h2 className="text-3xl font-bold tracking-tight">
+        <section className="py-14">
+            <div className="mx-auto max-w-5xl px-6">
+                <h2 className="font-display text-3xl tracking-tight">
                     Resources
                 </h2>
 
@@ -29,7 +29,7 @@ const Resources = ({ resources }: ResourcesProps) => {
                             href={link.value}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block rounded-2xl border p-5 text-lg transition-colors hover:bg-muted"
+                            className="block max-w-4xl border p-5 text-lg transition-colors hover:border-accent hover:bg-muted"
                         >
                             <span className="font-medium text-foreground">
                                 {link.label}:

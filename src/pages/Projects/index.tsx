@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 
 const Projects = () => {
     return (
-        <section className="py-15">
+        <section className="projects-page py-20 sm:py-24">
             <Container>
                 <div className="space-y-12">
                     <div className="space-y-2">
-                        <h1 className="text-4xl font-bold tracking-tight">
+                        <p className="eyebrow">A working archive</p>
+                        <h1 className="font-display mt-4 text-5xl tracking-tight">
                             Projects
                         </h1>
 
-                        <p className="max-w-2xl text-muted-foreground">
+                        <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
                             A collection of research and engineering projects, 
                             documenting the systems I've built, the problems 
                             they address, and the ideas behind their design.
@@ -23,12 +24,14 @@ const Projects = () => {
                         {projects.map((project) => (
                             <article
                                 key={project.id}
-                                className="border-b pb-8 last:border-none"
+                                className="border-b border-border py-8 first:pt-0 last:border-none"
                             >
                                 <div className="space-y-3">
                                     <div className="space-y-2">
-                                        <h2 className="text-2xl font-semibold tracking-tight">
-                                            {project.title}
+                                        <h2 className="font-display text-3xl tracking-tight">
+                                            <Link to={`/projects/${project.slug}`} className="transition-colors hover:text-accent">
+                                                {project.title}
+                                            </Link>
                                         </h2>
 
                                         <div className="flex items-center gap-2 text-sm">
@@ -48,7 +51,7 @@ const Projects = () => {
 
                                     <Link
                                         to={`/projects/${project.slug}`}
-                                        className="inline-flex font-medium transition-colors hover:text-foreground"
+                                        className="inline-flex font-medium text-foreground transition-colors hover:text-accent"
                                     >
                                         Explore Project →
                                     </Link>

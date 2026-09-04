@@ -22,7 +22,7 @@ const Hero = ({ project, details }: HeroProps) => {
             <div className="mx-auto max-w-7xl px-6">
                 <Link
                     to="/projects"
-                    className="mb-8 inline-flex items-center gap-2 text-sm text-neutral-500 transition-colors hover:text-black"
+                    className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent"
                 >
                     <ArrowLeft className="h-4 w-4" />
                     Back to Projects
@@ -132,10 +132,10 @@ const Hero = ({ project, details }: HeroProps) => {
                             <img
                                 src={project.thumbnail}
                                 alt={project.title}
-                                className="aspect-[4/3] w-full rounded-2xl border object-cover shadow-sm"
+                                className="h-auto w-full rounded-2xl border object-contain shadow-sm"
                             />
                         ) : (
-                            <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border bg-muted/20">
+                            <div className="flex aspect-[4/3] items-center justify-center border border-border bg-muted/20">
                                 <div className="text-center">
                                     <ImageIcon className="mx-auto mb-4 h-12 w-12 text-muted-foreground" />
 

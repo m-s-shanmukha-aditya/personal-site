@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Container from "../../../components/layout/Container";
+import { ArrowUpRight } from "lucide-react";
 
 const links = [
     {
@@ -31,29 +32,29 @@ const links = [
 const ContinueExploring = () => {
     return (
         <Container>
-            <section className="py-16 sm:py-20 border-t border-neutral-200">
+            <section className="border-t border-border py-16 sm:py-20">
                 <div className="max-w-3xl">
-                    <h2 className="text-3xl font-semibold tracking-tight">
+                    <h2 className="font-display text-4xl tracking-tight sm:text-5xl">
                         Continue Exploring
                     </h2>
 
-                    <p className="mt-5 text-lg leading-8 text-neutral-600">
+                    <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
                         Continue through the sections below to explore my work, writing, and background in more detail.
                     </p>
                 </div>
 
-                <nav className="mt-10 space-y-8">
+                <nav className="mt-10 grid border-t border-border sm:grid-cols-2">
                     {links.map((link) => (
                         <Link
                             key={link.title}
                             to={link.href}
-                            className="group block max-w-3xl"
+                            className="group block border-b border-border py-6 sm:pr-8"
                         >
-                            <h3 className="text-xl font-semibold tracking-tight transition-colors group-hover:text-neutral-600">
-                                {link.title}
+                            <h3 className="flex items-center justify-between text-xl font-semibold tracking-tight transition-colors group-hover:text-foreground">
+                                {link.title} <ArrowUpRight size={18} />
                             </h3>
 
-                            <p className="mt-2 leading-8 text-neutral-600">
+                            <p className="mt-2 leading-8 text-muted-foreground">
                                 {link.description}
                             </p>
                         </Link>

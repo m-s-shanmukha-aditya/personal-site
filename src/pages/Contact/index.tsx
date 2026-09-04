@@ -1,10 +1,11 @@
 const Contact = () => {
   return (
-    <main className="py-15">
+    <main className="py-20 sm:py-24">
       <div className="mx-auto max-w-5xl px-6">
         {/* Hero */}
         <section className="max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          <p className="eyebrow">Open to conversations</p>
+          <h1 className="font-display mt-4 text-5xl tracking-tight sm:text-6xl">
             Contact
           </h1>
 
@@ -16,7 +17,7 @@ const Contact = () => {
 
         {/* Contact Information */}
         <section className="mt-20">
-          <h2 className="text-2xl font-semibold">
+          <h2 className="font-display text-3xl">
             Get in Touch
           </h2>
 
@@ -26,7 +27,7 @@ const Contact = () => {
               <h3 className="font-medium">Email</h3>
               <a
                 href="mailto:m.s.shanmukha.aditya@gmail.com"
-                className="mt-2 inline-block text-muted-foreground hover:text-foreground"
+                className="accent-link mt-2 inline-block"
               >
                 m.s.shanmukha.aditya@gmail.com
               </a>
@@ -38,7 +39,7 @@ const Contact = () => {
                 href="https://github.com/m-s-shanmukha-aditya"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-block text-muted-foreground hover:text-foreground"
+                className="accent-link mt-2 inline-block"
               >
                 github.com/m-s-shanmukha-aditya
               </a>
@@ -50,7 +51,7 @@ const Contact = () => {
                 href="https://linkedin.com/in/m-s-shanmukha-aditya"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-block text-muted-foreground hover:text-foreground"
+                className="accent-link mt-2 inline-block"
               >
                 linkedin.com/in/m-s-shanmukha-aditya
               </a>
