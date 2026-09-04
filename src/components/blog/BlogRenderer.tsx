@@ -24,15 +24,15 @@ export default function BlogRenderer({ blog }: Props) {
           </p>
         </header>
 
-        <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_15rem]">
-          <div className="max-w-4xl space-y-7">
+        <div className="grid min-w-0 gap-16 lg:grid-cols-[minmax(0,1fr)_15rem]">
+          <div className="min-w-0 max-w-4xl space-y-7">
             {blog.content.map((block, index) => {
             switch (block.type) {
               case "paragraph":
                 return (
                   <p
                     key={index}
-                    className="text-lg leading-8 text-muted-foreground"
+                    className="break-words text-lg leading-8 text-muted-foreground"
                   >
                     {block.text}
                   </p>
@@ -95,7 +95,7 @@ export default function BlogRenderer({ blog }: Props) {
                 return (
                   <pre
                     key={index}
-                    className="overflow-x-auto border border-border bg-muted px-5 py-4 font-mono text-sm leading-6 text-foreground"
+                    className="max-w-full overflow-x-auto border border-border bg-muted px-5 py-4 font-mono text-sm leading-6 text-foreground"
                   >
                     <code>{block.code}</code>
                   </pre>

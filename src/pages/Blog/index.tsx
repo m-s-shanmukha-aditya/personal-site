@@ -28,7 +28,7 @@ const Blog = () => {
                             >
                                 <div className="space-y-3">
                                     <div className="space-y-2">
-                                        <h2 className="font-display text-3xl tracking-tight">
+                                        <h2 className="font-display max-w-full break-words text-2xl leading-tight tracking-tight sm:text-3xl">
                                             <Link to={`/blog/${blog.slug}`} className="transition-colors hover:text-accent">
                                                 {blog.title}
                                             </Link>
