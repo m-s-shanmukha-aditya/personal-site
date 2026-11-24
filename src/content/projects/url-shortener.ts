@@ -13,6 +13,8 @@ export const routr: Project = {
     overview:
         "Routr was built as a systems engineering project to understand how real-world backend services evolve beyond basic CRUD applications. The focus was not on replicating Bitly's feature set, but on exploring architectural decisions such as deterministic identifier generation, low-latency caching, asynchronous analytics processing, and the trade-offs involved in designing scalable distributed systems.",
 
+    thumbnail: "/thumbnails/routr-landing-page.png",
+
     year: 2026,
 
     category: "Software Engineering",
