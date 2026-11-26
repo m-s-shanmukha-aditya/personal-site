@@ -10,10 +10,7 @@ const Resume = () => {
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            A concise overview of my academic background, professional
-            experience, and technical expertise. While my projects and research
-            are documented in greater detail throughout this website, this page
-            summarizes the experience and technical foundation behind them.
+            A summary of my education, internships and technical skills.
           </p>
         </section>
 
@@ -36,11 +33,7 @@ const Resume = () => {
               </p>
 
               <p className="mt-4 leading-7 text-muted-foreground">
-                Contributed to improving a deep learning pipeline for tomato
-                leaf disease classification using transfer learning. Worked
-                across dataset preparation, preprocessing, model training,
-                evaluation, and experimentation workflows, with an emphasis on
-                building reliable and reproducible machine learning pipelines.
+                Implemented a three-class tomato leaf disease classifier using TensorFlow/Keras and an ImageNet-pretrained MobileNetV2 backbone, with image augmentation and a custom classification head. Used EarlyStopping and ModelCheckpoint for model selection and evaluated held-out performance with classification reports and confusion matrices.
               </p>
             </div>
 
@@ -58,12 +51,7 @@ const Resume = () => {
               </p>
 
               <p className="mt-4 leading-7 text-muted-foreground">
-                Implemented and evaluated supervised anomaly detection models
-                for NASA SMAP spacecraft telemetry based on published research.
-                Focused on data preprocessing, feature engineering, model
-                optimization, and experimentation to develop a reproducible
-                machine learning pipeline capable of handling highly imbalanced
-                real-world telemetry data.
+                Developed a supervised anomaly detection pipeline for NASA SMAP spacecraft telemetry using feature extraction, standardization and PCA. Addressed class imbalance with SMOTE on training data and tuned an RBF-kernel SVC with RandomizedSearchCV. Reached 88% accuracy with about 65% anomaly precision and recall on held-out test telemetry.
               </p>
             </div>
           </div>
@@ -75,15 +63,11 @@ const Resume = () => {
 
           <div className="mt-8 border-l border-border pl-6">
             <h3 className="text-lg font-semibold">
-              B.Tech (Hons.)
+              B.Tech (Hons.) in Computer Science &amp; Engineering
             </h3>
 
             <p className="mt-1 text-muted-foreground">
-              Data Science &amp; Machine Learning
-            </p>
-
-            <p className="mt-2">
-              Central University of Jharkhand
+              Central University of Jharkhand, Ranchi
             </p>
 
             <p className="mt-1 text-sm text-muted-foreground">
@@ -106,29 +90,35 @@ const Resume = () => {
             <div>
               <h3 className="font-medium">Languages</h3>
               <p className="mt-2 text-muted-foreground">
-                Java, Python, C, C++, SQL
+                Java, Python, SQL
               </p>
             </div>
 
             <div>
-              <h3 className="font-medium">Backend &amp; Databases</h3>
+              <h3 className="font-medium">Backend</h3>
               <p className="mt-2 text-muted-foreground">
-                Spring Boot, REST APIs, PostgreSQL, MySQL, Redis
+                Spring Boot, REST APIs, session-based authentication, role-based authorization, FastAPI
               </p>
             </div>
 
             <div>
-              <h3 className="font-medium">AI &amp; Machine Learning</h3>
+              <h3 className="font-medium">Databases</h3>
               <p className="mt-2 text-muted-foreground">
-                PyTorch, TensorFlow, scikit-learn, Hugging Face, Transformers,
-                LoRA, SentenceTransformers, FAISS
+                PostgreSQL, Redis
               </p>
             </div>
 
             <div>
-              <h3 className="font-medium">Developer Tools</h3>
+              <h3 className="font-medium">Tools and Cloud</h3>
               <p className="mt-2 text-muted-foreground">
-                Git, Maven, Postman, VS Code
+                Git, Docker, Postman, AWS (hands-on in progress)
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-medium">AI/ML</h3>
+              <p className="mt-2 text-muted-foreground">
+                PyTorch, TensorFlow/Keras, scikit-learn, Transformers, FAISS
               </p>
             </div>
           </div>
@@ -146,7 +136,7 @@ const Resume = () => {
           </p>
 
           <a
-            href="/Munukutla_Sri_Shanmukha_Aditya_Resume.pdf"
+            href="/M_S_SHANMUKHA_ADITYA_RESUME.pdf"
             download
             className="mt-6 inline-flex items-center border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:bg-accent hover:text-white"
           >

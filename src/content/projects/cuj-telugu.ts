@@ -1,5 +1,6 @@
 import type { Project } from "./types";
 
+// TODO add real member count
 export const teluguCommunityPlatform: Project = {
     id: "telugu-community-platform",
     slug: "telugu-community-platform",
@@ -34,7 +35,7 @@ export const teluguCommunityPlatform: Project = {
 
     status: "Completed",
 
-    featured: false,
+    featured: true,
 
     github: "https://github.com/m-s-shanmukha-aditya/cuj-telugu-community/",
 

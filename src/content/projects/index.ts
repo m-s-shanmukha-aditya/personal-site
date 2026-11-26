@@ -1,15 +1,15 @@
-import {quokka} from "./quokka";
-import {spacecraftTelemetry} from "./spacecraft-anomaly-detection";
-import {routr} from "./url-shortener";
-import doodleRush from "./doodle-rush";
-import {teluguCommunityPlatform} from "./cuj-telugu";
+import { quokka } from "./quokka";
+import { spacecraftTelemetry } from "./spacecraft-anomaly-detection";
+import { routr } from "./url-shortener";
+import { teluguCommunityPlatform } from "./cuj-telugu";
+import troubleshooter from "./troubleshooter";
 
 export const projects = [
-    quokka,
-    spacecraftTelemetry,
     routr,
-    doodleRush,
     teluguCommunityPlatform,
+    troubleshooter,
+    spacecraftTelemetry,
+    quokka,
 ];
 export const featuredProjects = projects.filter(
     project => project.featured

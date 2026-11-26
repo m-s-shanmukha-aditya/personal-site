@@ -217,12 +217,12 @@ const accuracyFailureDetection: Blog = {
 
     {
       type: "paragraph",
-      text: "The dataset had severe class imbalance, so accuracy wasn't enough when comparing the models. I evaluated approaches including One-Class SVM, Random Forest, and SVC, and optimized the final pipeline using RandomizedSearchCV and SMOTE.",
+      text: "The dataset had severe class imbalance, so accuracy wasn't enough. I tuned an RBF-kernel SVC with SMOTE and RandomizedSearchCV, and judged it on anomaly precision and recall as well as accuracy.",
     },
 
     {
       type: "paragraph",
-      text: "The final model achieved 88% accuracy, but that number alone didn't tell me how well it was detecting anomalies.",
+      text: "On a held-out split of a single channel, the final model achieved 88% accuracy, but that number alone didn't tell me how well it was detecting anomalies.",
     },
 
     {

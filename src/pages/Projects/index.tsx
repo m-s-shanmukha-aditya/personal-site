@@ -14,9 +14,7 @@ const Projects = () => {
                         </h1>
 
                         <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-                            A collection of research and engineering projects, 
-                            documenting the systems I've built, the problems 
-                            they address, and the ideas behind their design.
+                            A collection of backend and applied machine learning projects, with notes on the problems they address and how they were built.
                         </p>
                     </div>
 

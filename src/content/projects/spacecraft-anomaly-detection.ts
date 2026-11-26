@@ -24,8 +24,6 @@ export const spacecraftTelemetry: Project = {
         "Scikit-learn",
         "PCA",
         "SVC",
-        "Random Forest",
-        "One-Class SVM",
         "SMOTE",
         "RandomizedSearchCV",
         "Matplotlib"
@@ -34,6 +32,8 @@ export const spacecraftTelemetry: Project = {
     status: "Completed",
 
     featured: true,
+
+    github: "https://github.com/m-s-shanmukha-aditya/smap-spacecraft-anomaly-detection",
 
     detail: {
         hero: {
@@ -50,8 +50,7 @@ export const spacecraftTelemetry: Project = {
         solution: [
             "Converted anomaly interval metadata into supervised binary labels by mapping anomaly windows onto individual telemetry samples.",
             "Extracted statistical features from telemetry signals instead of directly modelling raw time-series data, followed by feature normalization and PCA for dimensionality reduction.",
-            "Systematically evaluated One-Class SVM, Random Forest, and Support Vector Classifier under identical preprocessing and evaluation pipelines.",
-            "Addressed severe class imbalance using SMOTE, optimized hyperparameters through RandomizedSearchCV, and selected an RBF-kernel SVC as the final model."
+            "Early experiments with other classifiers, including One-Class SVM and Random Forest, did not help and were dropped; the final pipeline uses an RBF-kernel SVC with PCA, SMOTE on the training data and RandomizedSearchCV."
         ],
 
         architecture: {
@@ -59,8 +58,7 @@ export const spacecraftTelemetry: Project = {
                 "Raw telemetry signals and anomaly interval metadata were first transformed into a supervised learning dataset.",
                 "Statistical features were extracted from each telemetry segment to represent spacecraft behaviour in a compact numerical form.",
                 "Feature standardization and Principal Component Analysis (PCA) reduced redundancy while preserving dominant signal characteristics.",
-                "Multiple classical machine learning models were trained and compared using identical feature representations.",
-                "The final pipeline combined SMOTE, PCA, RandomizedSearchCV, and an RBF Support Vector Classifier for binary anomaly detection."
+                "The final pipeline combined PCA, SMOTE on the training data, RandomizedSearchCV, and an RBF Support Vector Classifier for binary anomaly detection."
             ]
         },
 
@@ -77,14 +75,14 @@ export const spacecraftTelemetry: Project = {
                 description:
                     "The dataset contained approximately a 43:1 ratio between normal and anomalous samples, making conventional accuracy an unreliable evaluation metric.",
                 solution:
-                    "Applied SMOTE, class weighting, and focused on anomaly precision and recall rather than overall accuracy alone."
+                    "Applied SMOTE to the training data and focused on anomaly precision and recall as well as overall accuracy."
             },
             {
                 title: "Model Selection",
                 description:
-                    "Different classical machine learning algorithms behaved very differently on the engineered feature space.",
+                    "Early experiments with other classifiers did not help on the engineered feature space.",
                 solution:
-                    "Compared One-Class SVM, Random Forest, and SVC through systematic experimentation before selecting the final optimized classifier."
+                    "Dropped those experiments and used an RBF-kernel SVC with PCA, SMOTE on the training data, and RandomizedSearchCV."
             },
             {
                 title: "Anomaly-Type Classification",
@@ -100,20 +98,24 @@ export const spacecraftTelemetry: Project = {
                 title: "Final Model",
                 value: "RBF Support Vector Classifier",
                 description:
-                    "Selected after systematic comparison with One-Class SVM and Random Forest."
+                    "Used for held-out test results on the stated split."
             },
             {
                 title: "Accuracy",
                 value: "88%",
                 description:
-                    "Achieved on the final supervised anomaly detection pipeline despite severe class imbalance."
+                    "Held-out test result on a random stratified split of timesteps from one channel with two anomaly intervals."
             },
             {
                 title: "Anomaly Detection",
                 value: "~65% Precision / Recall",
                 description:
-                    "Maintained balanced anomaly detection performance under approximately 43:1 class imbalance."
+                    "Held-out test result on that split."
             }
+        ],
+
+        limitations: [
+            "Evaluation is a random stratified split of timesteps from one channel with two anomaly intervals, so the reported precision and recall are optimistic. Features are per-timestep, not windowed. The scoring metric targets the Normal class."
         ],
 
         lessonsLearned: [
@@ -127,7 +129,7 @@ export const spacecraftTelemetry: Project = {
         futureWork: [
             "Investigate temporal feature representations capable of modelling sequential spacecraft behaviour.",
             "Explore deep representation learning for anomaly-type classification.",
-            "Evaluate contrastive learning approaches for robust telemetry embeddings.",
+            "Evaluate contrastive learning approaches for telemetry embeddings.",
             "Develop feature representations capable of preserving contextual relationships between anomaly classes."
         ]
     }

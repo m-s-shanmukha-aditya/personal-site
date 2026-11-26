@@ -4,14 +4,13 @@ const Contact = () => {
       <div className="mx-auto max-w-5xl px-6">
         {/* Hero */}
         <section className="max-w-3xl">
-          <p className="eyebrow">Open to conversations</p>
+          <p className="eyebrow">Open to internships</p>
           <h1 className="font-display mt-4 text-5xl tracking-tight sm:text-6xl">
             Contact
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Whether it's a research discussion, project collaboration, or simply
-            connecting with fellow developers, I'm always happy to hear from you.
+            I&apos;m looking for a 6-month Java backend / SDE internship starting January 2027. If you&apos;re hiring interns, or want to talk about my projects, I&apos;d be glad to hear from you.
           </p>
         </section>
 
@@ -60,8 +59,19 @@ const Contact = () => {
             <div>
               <h3 className="font-medium">Location</h3>
               <p className="mt-2 text-muted-foreground">
-                Ranchi, Jharkhand, India
+                Kakinada, Andhra Pradesh, India (studying at Central University of Jharkhand, Ranchi)
               </p>
+            </div>
+
+            <div>
+              <h3 className="font-medium">Resume</h3>
+              <a
+                href="/M_S_SHANMUKHA_ADITYA_RESUME.pdf"
+                download
+                className="accent-link mt-2 inline-block"
+              >
+                Download resume
+              </a>
             </div>
 
           </div>

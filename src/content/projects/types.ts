@@ -55,6 +55,8 @@ export interface ProjectDetail {
         description?: string;
     }[];
 
+    limitations?: string[];
+
     lessonsLearned?: string[];
 
     futureWork?: string[];

@@ -8,7 +8,7 @@ const [primaryProject, ...otherProjects] = featuredProjects;
 const FeaturedProjects = () => {
     return (
         <Container>
-            <section className="py-16 sm:py-20">
+            <section id="featured-projects" className="py-16 sm:py-20">
 
                 <div className="flex flex-col justify-between gap-5 border-b border-border pb-8 sm:flex-row sm:items-end">
                     <div className="max-w-3xl">
@@ -17,10 +17,7 @@ const FeaturedProjects = () => {
                     </h2>
 
                     <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
-                        These projects represent different stages of my journey in
-                        building intelligent software systems, spanning
-                        conversational AI, backend engineering, and applied
-                        machine learning.
+                        Backend projects first, followed by applied machine learning work.
                     </p>
                     </div>
                     <Link to="/projects" className="accent-link shrink-0 text-sm font-semibold">View all projects</Link>

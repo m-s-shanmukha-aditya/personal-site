@@ -29,15 +29,15 @@ export const quokka: Project = {
         "Hugging Face",
     ],
 
-    status: "In Progress",
+    status: "Completed",
 
-    featured: true,
+    featured: false,
 
-    github: "https://github.com/m-s-shanmukha-aditya/quokka",
+    // github: "https://github.com/m-s-shanmukha-aditya/quokka",
 
     detail: {
         hero: {
-            duration: "Ongoing",
+            duration: "3 Months",
             role: "AI/ML Engineer & System Designer",
         },
 
@@ -118,7 +118,7 @@ export const quokka: Project = {
         ],
 
         futureWork: [
-            "Expand contrastive learning for more robust conversational phase representations.",
+            "Expand contrastive learning for improved conversational phase representations.",
             "Introduce reranking models to improve retrieval accuracy before language model inference.",
             "Replace heuristic conversation control with learned policy-based decision making.",
             "Evaluate larger instruction-tuned language models while maintaining efficient deployment.",

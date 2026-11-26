@@ -5,13 +5,13 @@ export const routr: Project = {
     slug: "routr",
 
     title: "Routr",
-    subtitle: "Scalable URL Shortener",
+    subtitle: "Redis-cached URL shortener",
 
     summary:
-        "A backend-focused URL shortening service built to study production system design, emphasizing scalability, caching, analytics, and distributed system design rather than simply implementing URL shortening.",
+        "A Spring Boot URL shortener using Base62 IDs from database-generated identifiers, Redis cache-aside redirects with TTL, and click analytics kept off the redirect path.",
 
     overview:
-        "Routr was built as a systems engineering project to understand how real-world backend services evolve beyond basic CRUD applications. The focus was not on replicating Bitly's feature set, but on exploring architectural decisions such as deterministic identifier generation, low-latency caching, asynchronous analytics processing, and the trade-offs involved in designing scalable distributed systems.",
+        "Routr is a Spring Boot URL shortener built to explore identifier generation, Redis caching, and click analytics. The focus is on backend choices such as Base62 IDs from database-generated identifiers, cache-aside redirects with TTL, and keeping analytics work off the redirect path.",
 
     thumbnail: "/thumbnails/routr-landing-page.png",
 
@@ -24,7 +24,6 @@ export const routr: Project = {
         "Spring Boot",
         "PostgreSQL",
         "Redis",
-        "React",
         "REST API"
     ],
 
@@ -43,15 +42,15 @@ export const routr: Project = {
         },
 
         problem: [
-            "Traditional URL shortening appears simple but introduces several backend engineering challenges involving unique identifier generation, low-latency redirection, analytics collection, and scalability.",
+            "URL shortening involves backend choices around unique identifier generation, fast redirects, and click analytics.",
             "A naïve implementation that performs database reads and writes for every redirect quickly becomes inefficient under increasing traffic.",
-            "The objective was to understand how production backend systems evolve by identifying bottlenecks and incrementally improving the architecture."
+            "The objective was to explore backend design choices by addressing observed bottlenecks."
         ],
 
         solution: [
             "Implemented deterministic short URL generation using Base62 encoding of database-generated identifiers, eliminating collision handling while producing compact URL-safe short codes.",
             "Introduced Redis using a cache-aside strategy to minimize repeated database lookups during URL redirection.",
-            "Separated analytics collection from the request lifecycle by maintaining live click counters in Redis and periodically synchronizing aggregated counts to PostgreSQL.",
+            "Separated analytics collection from the redirect path by maintaining click counters in Redis and periodically synchronizing aggregated counts to PostgreSQL.",
             "Designed the system around incremental architectural improvements, where each optimization addressed a newly discovered bottleneck rather than prematurely introducing unnecessary complexity."
         ],
 
@@ -83,7 +82,7 @@ export const routr: Project = {
             {
                 title: "High Analytics Write Frequency",
                 description:
-                    "Persisting click counts on every redirect generated excessive database writes that would not scale under high request volumes.",
+                    "Persisting click counts on every redirect would add a database write to each redirect request.",
                 solution:
                     "Buffered click counters in Redis and synchronized aggregated updates to PostgreSQL using a scheduled background task."
             },
@@ -99,9 +98,9 @@ export const routr: Project = {
         results: [
             {
                 title: "Backend Architecture",
-                value: "Production-Oriented",
+                value: "Cache-first design",
                 description:
-                    "Designed around caching, asynchronous processing, and scalable request handling rather than basic CRUD operations."
+                    "Uses caching and scheduled analytics synchronization alongside URL creation and redirects."
             },
             {
                 title: "Caching Strategy",
@@ -118,11 +117,11 @@ export const routr: Project = {
         ],
 
         lessonsLearned: [
-            "Scalable systems evolve by addressing observed bottlenecks rather than implementing every optimization upfront.",
+            "Fix the bottlenecks you actually observe rather than adding every optimisation upfront.",
             "Caching significantly improves latency but introduces cache invalidation and consistency considerations.",
             "Asynchronous processing improves throughput while introducing eventual consistency trade-offs.",
             "Simple architectural decisions, such as deterministic identifier generation, can eliminate entire classes of problems.",
-            "Production backend engineering is largely about balancing performance, scalability, complexity, and reliability."
+            "Backend design is mostly balancing performance, complexity and reliability."
         ],
 
         futureWork: [
@@ -132,6 +131,10 @@ export const routr: Project = {
             "Support URL expiration and automatic cleanup.",
             "Add distributed cache synchronization for multi-instance deployments.",
             "Introduce observability using centralized logging and metrics dashboards."
-        ]
+        ],
+
+        resources: {
+            article: "/blog/how-i-evolved-my-url-shortener-with-redis"
+        }
     }
 };

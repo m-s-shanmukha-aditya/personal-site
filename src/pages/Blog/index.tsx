@@ -16,7 +16,7 @@ const Blog = () => {
                         <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
                             A place where I document engineering decisions,
                             software design, machine learning experiments, and
-                            lessons learned while building real-world systems.
+                            lessons learned from building software projects.
                         </p>
                     </div>
 

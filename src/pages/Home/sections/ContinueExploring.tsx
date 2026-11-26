@@ -7,7 +7,7 @@ const links = [
         title: "Projects",
         href: "/projects",
         description:
-            "Explore the engineering decisions, trade-offs, and outcomes behind each project.",
+            "Browse my backend and applied machine learning projects.",
     },
     {
         title: "Resume",
@@ -19,7 +19,7 @@ const links = [
         title: "Blog",
         href: "/blog",
         description:
-            "Read essays and notes on software engineering, intelligent systems, and technology.",
+            "Read posts about my projects, software development, and technology.",
     },
     {
         title: "Contact",
@@ -39,7 +39,7 @@ const ContinueExploring = () => {
                     </h2>
 
                     <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
-                        Continue through the sections below to explore my work, writing, and background in more detail.
+                        Explore my projects, blog and resume below.
                     </p>
                 </div>
 

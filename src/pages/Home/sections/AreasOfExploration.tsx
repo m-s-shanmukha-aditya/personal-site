@@ -1,20 +1,21 @@
 import Container from "../../../components/layout/Container";
 
-const areas = [
+const stack = [
     {
-        title: "Intelligent Software Systems",
-        description:
-            "Exploring how software can better understand context, reason about information, and assist people through intelligent behaviour.",
+        title: "Languages",
+        description: "Java, Python, SQL",
     },
     {
-        title: "Software Architecture",
-        description:
-            "Designing modular, maintainable, and scalable systems that continue to evolve without becoming difficult to understand or extend.",
+        title: "Backend",
+        description: "Spring Boot, REST APIs, session-based auth, role-based authorization, FastAPI",
     },
     {
-        title: "Applied Machine Learning",
-        description:
-            "Using machine learning to solve practical engineering problems where it provides measurable value alongside traditional software approaches.",
+        title: "Data",
+        description: "PostgreSQL, Redis",
+    },
+    {
+        title: "Tools",
+        description: "Git, Docker, Postman, AWS (hands-on in progress)",
     },
 ];
 
@@ -25,32 +26,26 @@ const AreasOfExploration = () => {
 
                 <div className="max-w-3xl">
                     <h2 className="font-display text-4xl tracking-tight sm:text-5xl">
-                        Areas of Exploration
+                        Stack
                     </h2>
 
                     <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
-                        While every project is different, I find myself returning
-                        to a few recurring engineering challenges. These are the
-                        areas I'm most interested in exploring as I continue to
-                        learn and build.
+                        The tools and technologies I use in my backend projects.
                     </p>
                 </div>
 
-                <div className="mt-12 grid border-t border-border md:grid-cols-3">
+                <div className="mt-8 grid border-t border-border sm:grid-cols-2 lg:grid-cols-4">
 
-                    {areas.map((area) => (
+                    {stack.map((group) => (
                         <article
-                            key={area.title}
-                            className="border-b border-border py-7 md:border-b-0 md:border-r md:px-7 md:first:pl-0 md:last:border-r-0"
+                            key={group.title}
+                            className="border-b border-border py-5 sm:border-r sm:px-5 sm:first:pl-0 sm:nth-[2]:border-r-0 lg:border-b-0 lg:border-r lg:px-5 lg:first:pl-5 lg:nth-[2]:border-r lg:nth-[4]:border-r-0 lg:first:pl-0"
                         >
-                            <h3 className="text-xl font-semibold tracking-tight">
-                                {area.title}
-                            </h3>
+                            <h3 className="text-base font-semibold tracking-tight">{group.title}</h3>
 
-                            <p className="mt-2 leading-8 text-muted-foreground">
-                                {area.description}
+                            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                                {group.description}
                             </p>
-
                         </article>
                     ))}
 

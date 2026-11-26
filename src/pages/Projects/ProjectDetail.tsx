@@ -13,6 +13,7 @@ import LessonsLearned from "../../components/project-detail/LessonsLearned";
 import FutureWork from "../../components/project-detail/FutureWork";
 import Resources from "../../components/project-detail/Resources";
 import MoreProjects from "../../components/project-detail/MoreProjects";
+import Limitations from "../../components/project-detail/Limitations";
 
 const ProjectDetail = () => {
     const { slug } = useParams();
@@ -21,7 +22,7 @@ const ProjectDetail = () => {
         (project: Project) => project.slug === slug
     );
 
-    if (!project || !project.detail) {
+    if (!project) {
         return (
             <main className="mx-auto max-w-6xl px-6 py-20">
                 <h1 className="text-3xl font-bold">Project not found</h1>
@@ -36,21 +37,27 @@ const ProjectDetail = () => {
             details={project.detail}
         />
 
-        <Overview overview={project.overview} />
+        {project.detail && <Overview overview={project.overview} />}
 
-        <Problem problem={project.detail.problem} />
+        {project.detail?.problem && (
+            <Problem problem={project.detail.problem} />
+        )}
 
-        <Approach approach={project.detail.solution} />
+        {project.detail?.solution && (
+            <Approach approach={project.detail.solution} />
+        )}
 
-        <Architecture architecture={project.detail.architecture} />
+        <Architecture architecture={project.detail?.architecture} />
 
-        <Results results={project.detail.results} />
+        <Results results={project.detail?.results} />
 
-        <LessonsLearned lessonsLearned={project.detail.lessonsLearned} />
+        <LessonsLearned lessonsLearned={project.detail?.lessonsLearned} />
 
-        <FutureWork futureWork={project.detail.futureWork} />
+        <FutureWork futureWork={project.detail?.futureWork} />
 
-        <Resources resources={project.detail.resources} />
+        <Resources resources={project.detail?.resources} />
+
+        <Limitations limitations={project.detail?.limitations} />
 
         <MoreProjects currentProject={project} />
     </main>

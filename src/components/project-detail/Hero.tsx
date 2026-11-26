@@ -13,7 +13,7 @@ import type { Project, ProjectDetail } from "../../content/projects/types";
 
 interface HeroProps {
     project: Project;
-    details: ProjectDetail;
+    details?: ProjectDetail;
 }
 
 const Hero = ({ project, details }: HeroProps) => {
@@ -57,16 +57,19 @@ const Hero = ({ project, details }: HeroProps) => {
 
                         {/* Metadata */}
                         <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-                            <div className="flex items-center gap-2">
-                                <Clock3 className="h-4 w-4" />
-                                <span>{details.hero.duration}</span>
-                            </div>
+                            {details && (
+                                <>
+                                    <div className="flex items-center gap-2">
+                                        <Clock3 className="h-4 w-4" />
+                                        <span>{details.hero.duration}</span>
+                                    </div>
 
-                            <div className="flex items-center gap-2">
-                                <User className="h-4 w-4" />
-                                <span>{details.hero.role}</span>
-                            </div>
-
+                                    <div className="flex items-center gap-2">
+                                        <User className="h-4 w-4" />
+                                        <span>{details.hero.role}</span>
+                                    </div>
+                                </>
+                            )}
                             <div className="flex items-center gap-2">
                                 <Calendar className="h-4 w-4" />
                                 <span>{project.year}</span>
